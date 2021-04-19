@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "69a37b02-5817-4222-80a9-570366f0d11d",
+		"name": "Corrida",
+		"description": "Desafio Delivery IT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Corredores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/corredores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"corredores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Corredor",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Afonso",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "06704671666",
+							"type": "text"
+						},
+						{
+							"key": "data_nascimento",
+							"value": "05/10/1976",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:80/api/corredores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"corredores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Prova",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tipo_prova",
+							"value": "21",
+							"description": "valores aceitos [3, 5, 10, 21, 42]",
+							"type": "text"
+						},
+						{
+							"key": "data",
+							"value": "21/04/2021",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:80/api/provas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"provas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Provas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/provas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"provas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Corredores em Provas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "corredor",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "prova",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "hora_inicio",
+							"value": "08:30:00",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hora_fim",
+							"value": "09:05:09",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:80/api/corredores-prova",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"corredores-prova"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/resultados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"resultados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resultados por Idade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/resultados-idade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"resultados-idade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar horarios",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "corredor",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "prova",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "hora_inicio",
+							"value": "08:30:00",
+							"type": "text"
+						},
+						{
+							"key": "hora_fim",
+							"value": "09:05:09",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:80/api/corredores-prova",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"corredores-prova"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

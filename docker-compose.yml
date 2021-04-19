@@ -1,0 +1,46 @@
+version: '3'
+services:
+  server-delivery:
+    hostname: server-delivery
+    container_name: server-delivery
+    build:
+      context: .
+      dockerfile: docker/webserver/Dockerfile
+    image: server-delivery
+    ports:
+      - "80:8080"
+    volumes:
+      - ./src:/var/www
+      - ./log:/var/log/nginx
+    env_file:
+      - ./src/.env
+    networks:
+      - delivery-it
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - delivery-it
+  db:
+    container_name: db
+    build: docker/percona
+    image: db
+    ports:
+      - "3310:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_USER: deliver_it
+      MYSQL_PASSWORD: 123
+      MYSQL_DATABASE: deliver_it
+    volumes:
+      - ./db/sql/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./.docker/percona/custom.cnf:/etc/mysql/conf.d/custom.cnf
+    restart: always
+    networks:
+      - delivery-it
+
+networks:
+  delivery-it:
+    driver: bridge
