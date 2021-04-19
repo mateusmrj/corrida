@@ -22,6 +22,8 @@ docker-compose up -d --build
 docker exec -it server-delivery sh
 
 composer install
+
+chmod -R 777 *
 ```
 ou, se for o caso
 
@@ -29,6 +31,8 @@ ou, se for o caso
 docker exec -it server-delivery bash
 
 composer install
+
+chmod -R 777 *
 ```
 
 Projeto está rodando na porta 80 inicialmente.
