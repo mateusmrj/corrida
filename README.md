@@ -1,13 +1,36 @@
-# Base Docker Application
+# Desafio Deliver IT
 
-Aplicação de base Docker + PHP-7.3-FPM Alpine + Nginx
-para montagem e distribuição rapida de aplicações de alta
-escalabilidade, sendo possivel utilizar desta mesma base
-com os FrameWorks mais utilizados como Zend, Laravel e Symfony.
+## Sobre a aplicação
 
-### Observações de utilização
+Aplicação de base Docker + PHP-7.4-FPM Alpine + Nginx
+para montagem, com os FrameWorks Laravel.
 
-renomeie os arquivos de variavies de ambiente
-.env.dist para .env e .env.prod.dist para .env.prod
-os nomes renomeados sao ignorados via git pod consequencia
-para não versionamento de senhas e outros dados sensiveis.# corrida
+## Para rodar o projeto
+
+Build o docker
+
+Clone o projeto:
+```sh
+git clone https://github.com/mateusmrj/corrida.git
+```
+Navege até a pasta do projeto.
+
+Execute:
+
+```sh
+docker-compose up -d --build
+
+docker exec -it server-delivery sh
+```
+ou, se for o caso
+
+```sh
+docker exec -it server-delivery bash
+```
+
+Projeto está rodando na porta 80 inicialmente.
+
+### As rotas 
+Coleção para com as rotas e teste das mesmas,
+está no arquivo Corrida.postman_collection.json na base do projeto.
+
