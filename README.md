@@ -7,25 +7,28 @@ para montagem, com os FrameWorks Laravel.
 
 ## Para rodar o projeto
 
-Build o docker
-
 Clone o projeto:
 ```sh
 git clone https://github.com/mateusmrj/corrida.git
 ```
 Navege até a pasta do projeto.
 
+Build o docker.
 Execute:
 
 ```sh
 docker-compose up -d --build
 
 docker exec -it server-delivery sh
+
+composer install
 ```
 ou, se for o caso
 
 ```sh
 docker exec -it server-delivery bash
+
+composer install
 ```
 
 Projeto está rodando na porta 80 inicialmente.
